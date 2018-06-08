@@ -11,13 +11,13 @@ class AddTaskView extends Component {
   }
 
   updateField(field, value) {
-    this.props.updateAddTaskField(field, value)
+    this.props.updateAddTaskField(field, value);
   }
 
   render() {
     const buttonText = 'Add Task';
     const buttonClass = 'add-todo-button' +
-        (this.props.newTask.title.length ? '' : ' disabled')
+        (this.props.newTask && this.props.newTask.title && this.props.newTask.title.length ? '' : ' disabled')
     return (
       <div className='ui-card add-todo-container'>
         <h3 className='add-todo-header'>Add a New Tast</h3>

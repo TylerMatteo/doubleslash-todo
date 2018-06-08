@@ -18,6 +18,8 @@ function newTask(state=initialState.newTask, action={}) {
       };
     case CLEAR_ADD_TASK_FIELDS:
       return initialState.newTask;
+    default:
+      return initialState.newTask;
   }
 }
 

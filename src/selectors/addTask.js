@@ -1,1 +1,1 @@
-export const selectTask = (state) => state.addTask.newTodo;
+export const selectTask = (state) => state.addTask.newTask;
