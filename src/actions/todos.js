@@ -8,5 +8,9 @@ export const UPDATE_TODO_FIELD = 'UPDATE_TODO_FIELD';
 export function updateTodoField() {}
 
 export const MARK_TODO_AS_COMPLETE = 'MARK_TODO_AS_COMPLETED';
-export function markTodoAsComplete() {}
-
+export function markTodoAsComplete(id) {
+    return {
+        type: MARK_TODO_AS_COMPLETE,
+        id
+    }
+}

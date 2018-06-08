@@ -14,6 +14,7 @@ export default function todos(state=initialState, action={}) {
     case 'CREATE_TODO':
       const id = guid();
       return {
+        ...state,
         [id]: {
           title: action.title,
           description: action.description,
@@ -31,7 +32,7 @@ export default function todos(state=initialState, action={}) {
           [action.field]: action.value,
         }
       };
-    case 'MARK_TODO_AS_COMPLETE':
+    case 'MARK_TODO_AS_COMPLETED':
       return {
         ...state,
         [action.id]: {
