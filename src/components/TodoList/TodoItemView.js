@@ -10,7 +10,12 @@ class TodoItemView extends Component {
         Complete Task
       </button>)
     } else {
-      return ''
+      return (<button
+        className='undo-completed'
+        onClick={console.log("hi")}
+        >
+      Undo
+    </button>)
     }
   }
 
