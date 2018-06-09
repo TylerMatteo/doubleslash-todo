@@ -15,7 +15,7 @@ class TodoItemView extends Component {
   }
 
   deleteTodoItem() {
-    // TODO: implement me!
+    this.props.deleteItem()
   }
 
   render() {

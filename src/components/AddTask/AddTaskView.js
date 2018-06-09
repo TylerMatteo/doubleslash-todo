@@ -20,7 +20,7 @@ class AddTaskView extends Component {
         (this.props.newTask && this.props.newTask.title && this.props.newTask.title.length ? '' : ' disabled')
     return (
       <div className='ui-card add-todo-container'>
-        <h3 className='add-todo-header'>Add a New Tast</h3>
+        <h3 className='add-todo-header'>Add a New Task</h3>
         <div className='input-group'>
           <label htmlFor='title' className='input-group-label'>Title</label>
           <input type='text'

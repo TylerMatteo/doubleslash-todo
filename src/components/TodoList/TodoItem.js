@@ -15,7 +15,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    completeItem: () => dispatch(markTodoAsComplete(ownProps.id))
+    completeItem: () => dispatch(markTodoAsComplete(ownProps.id)),
+    deleteItem: () => dispatch(deleteTodo(ownProps.id))
   };
 }
 
