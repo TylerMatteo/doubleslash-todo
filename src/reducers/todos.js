@@ -16,7 +16,6 @@ export default function todos(state=initialState, action={}) {
       return {
         ...state,
         [id]: {
-          id,
           title: action.title,
           description: action.description,
           created: action.created,
