@@ -12,7 +12,7 @@ class TodoItemView extends Component {
     } else {
       return (<button
         className='undo-completed'
-        onClick={console.log("hi")}
+        onClick={this.props.undoCompleteItem}
         >
       Undo
     </button>)

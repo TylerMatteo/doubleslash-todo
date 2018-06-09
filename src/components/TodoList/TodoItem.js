@@ -4,7 +4,8 @@ import TodoItemView from './TodoItemView';
 import {
   deleteTodo,
   updateTodoField,
-  markTodoAsComplete
+  markTodoAsComplete,
+  undoTodoComplete
 } from '../../actions/todos.js';
 
 const mapStateToProps = (state, ownProps) => {
@@ -16,6 +17,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     completeItem: () => dispatch(markTodoAsComplete(ownProps.id)),
+    undoCompleteItem: () => dispatch(undoTodoComplete(ownProps.id)),
     deleteItem: () => dispatch(deleteTodo(ownProps.id))
   };
 }

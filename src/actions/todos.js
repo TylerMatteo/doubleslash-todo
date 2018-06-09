@@ -19,3 +19,11 @@ export function markTodoAsComplete(id) {
         id
     }
 }
+
+export const UNDO_TODO_COMPLETE = 'UNDO_TODO_COMPLETE';
+export function undoTodoComplete(id) {
+    return {
+        type: UNDO_TODO_COMPLETE,
+        id
+    }
+}

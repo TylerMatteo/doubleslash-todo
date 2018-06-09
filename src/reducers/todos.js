@@ -3,6 +3,7 @@ import {
   DELETE_TODO,
   UPDATE_TODO_FIELD,
   MARK_TODO_AS_COMPLETED,
+  UNDO_TODO_COMPLETE
 } from '../actions/todos.js';
 import { guid } from '../helpers/util.js';
 import { fromJS } from 'immutable';
@@ -38,6 +39,14 @@ export default function todos(state=initialState, action={}) {
         [action.id]: {
           ...state[action.id],
           completed: true,
+        }
+      }
+    case UNDO_TODO_COMPLETE:
+      return {
+        ...state,
+        [action.id]: {
+          ...state[action.id],
+          completed: false,
         }
       }
     default:
