@@ -6,6 +6,7 @@ import {
 } from '../../selectors/todos.js';
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
     todos: Object.entries(state.todos)
       .map(([id, todo]) => { return { id, ...todo }})

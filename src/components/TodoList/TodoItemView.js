@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class TodoItemView extends Component {
-  renderButton() {
+  renderCompleteOrUndoButton() {
     if (!this.props.todo.completed) {
       return (<button
           className='mark-as-complete'
@@ -17,6 +17,32 @@ class TodoItemView extends Component {
       Undo
     </button>)
     }
+  }
+
+  renderEditOrSaveButton() {
+    if (this.props.todo.edit) {
+      return (
+        <button
+        className='save'
+        onClick={this.props.toggleEditMode}
+        >
+          Save
+        </button>
+      )
+    } else {
+      return (
+        <button
+        className='edit'
+        onClick={this.props.toggleEditMode}
+        >
+          Edit
+        </button>
+      )
+    }
+  }
+
+  updateField(field, value) {
+    this.props.updateAddTaskField(field, value);
   }
 
   deleteTodoItem() {
@@ -39,7 +65,8 @@ class TodoItemView extends Component {
           </div>
         </div>
         <p className='todo-item-description'>{this.props.todo.description}</p>
-        {this.renderButton()}
+        {this.renderCompleteOrUndoButton()}
+        {this.renderEditOrSaveButton()}
       </div>
     )
   }

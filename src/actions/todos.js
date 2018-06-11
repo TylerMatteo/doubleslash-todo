@@ -27,3 +27,20 @@ export function undoTodoComplete(id) {
         id
     }
 }
+
+export const TOGGLE_TODO_EDIT_MODE = 'TOGGLE_TODO_EDIT_MODE';
+export function toggleTodoEditMode(id) {
+    return {
+        type: TOGGLE_TODO_EDIT_MODE,
+        id
+    }
+}
+
+export const UPDATE_EDIT_TASK_FIELD = 'UPDATE_EDIT_TASK_FIELD';
+export function updateEditField(field, value) {
+    return {
+        type: UPDATE_EDIT_TASK_FIELD,
+        field,
+        value
+      }
+}

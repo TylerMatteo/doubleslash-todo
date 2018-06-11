@@ -3,7 +3,9 @@ import {
   DELETE_TODO,
   UPDATE_TODO_FIELD,
   MARK_TODO_AS_COMPLETED,
-  UNDO_TODO_COMPLETE
+  UNDO_TODO_COMPLETE,
+  TOGGLE_TODO_EDIT_MODE,
+  UPDATE_EDIT_TASK_FIELD
 } from '../actions/todos.js';
 import { guid } from '../helpers/util.js';
 import { fromJS } from 'immutable';
@@ -21,6 +23,7 @@ export default function todos(state=initialState, action={}) {
           description: action.description,
           created: action.created,
           completed: false,
+          edit: false
         }
       }
     case DELETE_TODO:
@@ -48,6 +51,19 @@ export default function todos(state=initialState, action={}) {
           ...state[action.id],
           completed: false,
         }
+      }
+    case TOGGLE_TODO_EDIT_MODE:
+      return {
+        ...state,
+        [action.id]: {
+          ...state[action.id],
+          edit: !state[action.id].edit,
+        }
+      }
+    case UPDATE_EDIT_TASK_FIELD:
+      return {
+        ...state,
+        
       }
     default:
       return state;
